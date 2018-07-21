@@ -66,17 +66,16 @@ function handleMIDIMessage( event)
 	if( event.data[0] ==0xF8 ) return;
 
 	if( event.data[0] ==0xF0 ){
-		if( ( event.data[1] ==0xF0 ) &&
-			( event.data[2] ==0x43 ) &&
-			( event.data[3] ==0x00 ) &&
-			( event.data[4] ==0x7F ) &&
-			( event.data[5] ==0x1C ) &&
-			( event.data[8] ==0x05 ) ){
+		if( ( event.data[1] ==0x43 ) &&
+			( event.data[2] ==0x00 ) &&
+			( event.data[3] ==0x7F ) &&
+			( event.data[4] ==0x1C ) &&
+			( event.data[7] ==0x05 ) ){
 
-			length = ((event.data[6]&0x7F)<<7) + event.data[7]&0x7F;
-			ah = event.data[9] &0x7F;
-			am = event.data[10]&0x7F;
-			al = event.data[11]&0x7F;
+			length = ((event.data[5]&0x7F)<<7) + event.data[6]&0x7F;
+			ah = event.data[8] &0x7F;
+			am = event.data[9]&0x7F;
+			al = event.data[10]&0x7F;
 			log.innerText = "Sys Ex length = "
 			log.innerText += length.toString(16);
 			log.innerText += " "
