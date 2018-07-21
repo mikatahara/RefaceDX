@@ -63,6 +63,7 @@ function handleMIDIMessage( event)
 	var length, ah, am, al;
 
 	if( event.data[0] ==0xFE ) return;
+	if( event.data[0] ==0xF8 ) return;
 
 	if( event.data[0] ==0xF0 ){
 		if( ( event.data[1] ==0xF0 ) &&
