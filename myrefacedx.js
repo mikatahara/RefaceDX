@@ -85,7 +85,7 @@ function handleMIDIMessage( event)
 			log.innerText += " "
 			log.innerText += al.toString(16);
 
-			saveMEM(event,12,ah,am,al,length);
+			saveMEM(event,11,ah,am,al,length);
 		}
 	}
 }
