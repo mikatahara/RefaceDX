@@ -95,7 +95,7 @@ function saveMEM(event,st,ah,am,al,length)
 	var i;
 
 	switch(ah){
-		case 0x00:
+		case 0x30:
 			for(i=0; i<length; i++){
 				mVCOM[i]=event.data[st+i];
 			}
