@@ -20,7 +20,10 @@ window.addEventListener("load", function(){
 //	var ope = document.getElementById("op1");
 //	ope.opon.checked =1;
 	var vname = document.getElementById("vname");
-	vname.value = "aaaaaaaaaa";
+	vname.value = 'a';
+	vname.value += 'b';
+	vname.value += 'c';
+	vname.value += 'd';
 
 	var hoge = setInterval(function() {
 		if (inputs != null) {
