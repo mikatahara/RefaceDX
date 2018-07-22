@@ -154,6 +154,7 @@ function sendFormOp(am,e)
 
 	if( e.name!='freq'){
 		mOP[am][addr] = data;
+		sendSysExOP(am,addr,data);
 	} else {
 		mOP[am][cFcoarse] = data & 0x1F;
 		mOP[am][cFfine] = (data >>5)&0x7F;
