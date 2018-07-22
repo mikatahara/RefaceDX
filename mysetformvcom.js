@@ -35,7 +35,7 @@ function setFormVCOM()
 {
 	var vname = document.getElementById("vname");
 	vname.value = '';
-	for(var i=0; i<10; i++) vname.value += mVCOM[i];
+	for(var i=0; i<10; i++) vname.value += String.fromCharCode(mVCOM[i]);
 
 	var fnc = document.getElementById("function");
 
