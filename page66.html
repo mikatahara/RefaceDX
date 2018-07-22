@@ -100,24 +100,24 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 
 <!--- --->
 <tr><form id="function"><td>
-<input type="number" name="trans"  step="1" min="-24" max="24" value="-24">
+<input type="number" name="trans"  step="1" min="-24" max="24" value="-24" onChange="editvalue(this);">
 </td>
 <td>
-<select name="partmode">
+<select name="partmode" onChange="editvalue(this);">
 <option value="poly">POLY</option>
 <option value="full">FULL</option>
 <option value="legato">LEGATO</option>
 </select>
 </td><td>
-<input type="number" name="portament"  step="1" min="0" max="127" value="0">
+<input type="number" name="portament"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="pitchbend"  step="1" min="0" max="127" value="0">
+<input type="number" name="pitchbend"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td></form>
 
 <!--- --->
 <td width="2"></td>
 <form id="effect1"><td>
-<select name="type">
+<select name="type" onChange="editvalue(this);">
 <option value="thru">THRU</option>
 <option value="dist">DIST</option>
 <option value="twah">T.WAH</option>
@@ -128,15 +128,15 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <option value="rev">REV</option>
 </select>
 </td><td>
-<input type="number" name="param1"  step="1" min="0" max="127" value="0">
+<input type="number" name="param1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="param2"  step="1" min="0" max="127" value="0">
+<input type="number" name="param2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td></form>
 
 <!--- --->
 <td width="2"></td>
 <form id="effect2"><td>
-<select name="type">
+<select name="type" onChange="editvalue(this);">
 <option value="thru">THRU</option>
 <option value="dist">DIST</option>
 <option value="twah">T.WAH</option>
@@ -147,9 +147,9 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <option value="rev">REV</option>
 </select>
 </td><td>
-<input type="number" name="param1"  step="1" min="0" max="127" value="0">
+<input type="number" name="param1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="param2"  step="1" min="0" max="127" value="0">
+<input type="number" name="param2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td></form>
 
 <!--- --->
@@ -184,29 +184,29 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 </tr>
 <!--- --->
 <tr><form id="main"><td>
-<input type="number" name="alg"  step="1" min="1" max="12" value="1">
+<input type="number" name="alg"  step="1" min="1" max="12" value="1" onChange="editvalue(this);">
 </td>
 <td width="2"></td>
 <td>
-<input type="number" name="rate1"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level1"  step="1" min="-48" max="48" value="0">
+<input type="number" name="level1"  step="1" min="-48" max="48" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate2"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level2"  step="1" min="-48" max="48" value="0">
+<input type="number" name="level2"  step="1" min="-48" max="48" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate3"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level3"  step="1" min="-48" max="48" value="0">
+<input type="number" name="level3"  step="1" min="-48" max="48" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate4"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level4"  step="1" min="-48" max="48" value="0">
+<input type="number" name="level4"  step="1" min="-48" max="48" value="0" onChange="editvalue(this);">
 </td>
 <td width="2"></td>
 <td>
-<select name="wave">
+<select name="wave" onChange="editvalue(this);">
 <option value="sin">SIN</option>
 <option value="tri">TRI</option>
 <option value="sawu">SAW U</option>
@@ -216,11 +216,11 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <option value="sh">S&H</option>
 </select>
 </td><td>
-<input type="number" name="speed"  step="1" min="0" max="127" value="0">
+<input type="number" name="speed"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="delay"  step="1" min="0" max="127" value="0">
+<input type="number" name="delay"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="pmd"  step="1" min="0" max="127" value="0">
+<input type="number" name="pmd"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td>
 
 <!--- --->
@@ -266,176 +266,176 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <tr><form id="op1">
 <td align="center">1</td>
 <td align="center">
-<input type="checkbox" name="opon" id='1_opon' value=1 >
+<input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
-<select name="ratio">
+<select name="ratio" onChange="editvalue(this);">
 <option value="ratio">RATIO</option>
 <option value="fix">FIX</option>
 </select>
 </td><td>
-<input type="number" name="freq" id='1_freq' step="1" min="1" max="3200" value="1">
+<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="detune"  id='1_detune' step="1" min="-64" max="63" value="0">
+<input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
-<input type="number" name="level" id='1_level' step="1" min="0" max="127" value="0">
+<input type="number" name="level" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="vels" id='1_vels' step="1" min="0" max="127" value="0">
+<input type="number" name="vels" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="fbtype">
+<select name="fbtype" onChange="editvalue(this);">
 <option value="saw">SAW</option>
 <option value="squ">SQU</option>
 </select>
 </td><td>
-<input type="number" name="fblevel"  step="1" min="0" max="127" value="0">
+<input type="number" name="fblevel"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 <td width="2"></td>
 </td><td>
-<input type="number" name="rate1"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level1"  step="1" min="0" max="127" value="0">
+<input type="number" name="level1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate2"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level2"  step="1" min="0" max="127" value="0">
+<input type="number" name="level2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate3"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level3"  step="1" min="0" max="127" value="0">
+<input type="number" name="level3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate4"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level4"  step="1" min="0" max="127" value="0">
+<input type="number" name="level4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td>
 </form></tr>
 <!--- --->
 <tr><form id="op2">
 <td align="center">2</td>
 <td align="center">
-<input type="checkbox" name="opon" value=1 >
+<input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
-<select name="ratio">
+<select name="ratio" onChange="editvalue(this);">
 <option value="ratio">RATIO</option>
 <option value="fix">FIX</option>
 </select>
 </td><td>
-<input type="number" name="freq"  step="1" min="1" max="3200" value="1">
+<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="detune"  step="1" min="-64" max="63" value="0">
+<input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
-<input type="number" name="level"  step="1" min="0" max="127" value="0">
+<input type="number" name="level" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="vels"  step="1" min="0" max="127" value="0">
+<input type="number" name="vels" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="fbtype">
+<select name="fbtype" onChange="editvalue(this);">
 <option value="saw">SAW</option>
 <option value="squ">SQU</option>
 </select>
 </td><td>
-<input type="number" name="fblevel"  step="1" min="0" max="127" value="0">
+<input type="number" name="fblevel"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 <td width="2"></td>
 </td><td>
-<input type="number" name="rate1"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level1"  step="1" min="0" max="127" value="0">
+<input type="number" name="level1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate2"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level2"  step="1" min="0" max="127" value="0">
+<input type="number" name="level2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate3"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level3"  step="1" min="0" max="127" value="0">
+<input type="number" name="level3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate4"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level4"  step="1" min="0" max="127" value="0">
+<input type="number" name="level4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td>
 </form></tr>
 <!--- --->
 <tr><form id="op3">
 <td align="center">3</td>
 <td align="center">
-<input type="checkbox" name="opon" value=1 >
+<input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
-<select name="ratio">
+<select name="ratio" onChange="editvalue(this);">
 <option value="ratio">RATIO</option>
 <option value="fix">FIX</option>
 </select>
 </td><td>
-<input type="number" name="freq"  step="1" min="1" max="3200" value="1">
+<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="detune"  step="1" min="-64" max="63" value="0">
+<input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
-<input type="number" name="level"  step="1" min="0" max="127" value="0">
+<input type="number" name="level" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="vels"  step="1" min="0" max="127" value="0">
+<input type="number" name="vels" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="fbtype">
+<select name="fbtype" onChange="editvalue(this);">
 <option value="saw">SAW</option>
 <option value="squ">SQU</option>
 </select>
 </td><td>
-<input type="number" name="fblevel"  step="1" min="0" max="127" value="0">
+<input type="number" name="fblevel"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 <td width="2"></td>
 </td><td>
-<input type="number" name="rate1"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level1"  step="1" min="0" max="127" value="0">
+<input type="number" name="level1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate2"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level2"  step="1" min="0" max="127" value="0">
+<input type="number" name="level2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate3"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level3"  step="1" min="0" max="127" value="0">
+<input type="number" name="level3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate4"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level4"  step="1" min="0" max="127" value="0">
+<input type="number" name="level4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td>
 </form></tr>
 <!--- --->
 <tr><form id="op4">
 <td align="center">4</td>
 <td align="center">
-<input type="checkbox" name="opon" value=1 >
+<input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
-<select name="ratio">
+<select name="ratio" onChange="editvalue(this);">
 <option value="ratio">RATIO</option>
 <option value="fix">FIX</option>
 </select>
 </td><td>
-<input type="number" name="freq"  step="1" min="1" max="3200" value="1">
+<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="detune"  step="1" min="-64" max="63" value="0">
+<input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
-<input type="number" name="level"  step="1" min="0" max="127" value="0">
+<input type="number" name="level" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="vels"  step="1" min="0" max="127" value="0">
+<input type="number" name="vels" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="fbtype">
+<select name="fbtype" onChange="editvalue(this);">
 <option value="saw">SAW</option>
 <option value="squ">SQU</option>
 </select>
 </td><td>
-<input type="number" name="fblevel"  step="1" min="0" max="127" value="0">
+<input type="number" name="fblevel"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 <td width="2"></td>
 </td><td>
-<input type="number" name="rate1"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level1"  step="1" min="0" max="127" value="0">
+<input type="number" name="level1"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate2"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level2"  step="1" min="0" max="127" value="0">
+<input type="number" name="level2"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate3"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level3"  step="1" min="0" max="127" value="0">
+<input type="number" name="level3"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="rate4"  step="1" min="0" max="127" value="0">
+<input type="number" name="rate4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="level4"  step="1" min="0" max="127" value="0">
+<input type="number" name="level4"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td>
 </form></tr>
 <!--- --->
@@ -471,134 +471,136 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <tr><form id="mod1">
 <td align="center">1</td>
 <td>
-<input type="number" name="amd"  step="1" min="0" max="127" value="0">
+<input type="number" name="amd"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="checkbox" id="pmd" value=1 >
+<input type="checkbox" name="pmd" onChange="editvalue(this);" >
 </td><td>
-<input type="checkbox" id="peg" value=1 >
+<input type="checkbox" name="peg" onChange="editvalue(this);" >
 </td>
 <td width="2"></td>
 <td>
-<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="cuv_l">
+<select name="cuv_l" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<select name="cuv_r">
+<select name="cuv_r" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
 </form></tr>
 <!--- --->
 <tr><form id="mod2">
 <td align="center">2</td>
 <td>
-<input type="number" name="amd"  step="1" min="0" max="127" value="0">
+<input type="number" name="amd"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="checkbox" id="pmd" value=1 >
+<input type="checkbox" name="pmd" onChange="editvalue(this);" >
 </td><td>
-<input type="checkbox" id="peg" value=1 >
+<input type="checkbox" name="peg" onChange="editvalue(this);" >
 </td>
 <td width="2"></td>
 <td>
-<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="cuv_r">
+<select name="cuv_l" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<select name="cuv_l">
+<select name="cuv_r" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
 </form></tr>
 <!--- --->
 <tr><form id="mod3">
 <td align="center">3</td>
 <td>
-<input type="number" name="amd"  step="1" min="0" max="127" value="0">
+<input type="number" name="amd"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="checkbox" id="pmd" value=1 >
+<input type="checkbox" name="pmd" onChange="editvalue(this);" >
 </td><td>
-<input type="checkbox" id="peg" value=1 >
+<input type="checkbox" name="peg" onChange="editvalue(this);" >
 </td>
 <td width="2"></td>
 <td>
-<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="cuv_r">
+<select name="cuv_l" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<select name="cuv_l">
+<select name="cuv_r" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
 </form></tr>
 <!--- --->
 <tr><form id="mod4">
 <td align="center">4</td>
 <td>
-<input type="number" name="amd"  step="1" min="0" max="127" value="0">
+<input type="number" name="amd"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="checkbox" id="pmd" value=1 >
+<input type="checkbox" name="pmd" onChange="editvalue(this);" >
 </td><td>
-<input type="checkbox" id="peg" value=1 >
+<input type="checkbox" name="peg" onChange="editvalue(this);" >
 </td>
 <td width="2"></td>
 <td>
-<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
-<select name="cuv_r">
+<select name="cuv_l" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<select name="cuv_l">
+<select name="cuv_r" onChange="editvalue(this);">
 <option value="mlin">-LIN</option>
 <option value="mexp">-EXP</option>
 <option value="pexp">+EXP</option>
 <option value="plin">+LIN</option>
 </select>
 </td><td>
-<input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">
+<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0" onChange="editvalue(this);">
 </td><td>
 </form></tr>
+<!--- ---------------------------------------------------------------- --->
+
 </table>
 
 <!--- ---------------------------------------------------------------- --->

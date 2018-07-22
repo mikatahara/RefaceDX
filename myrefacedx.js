@@ -15,15 +15,15 @@ window.addEventListener("load", function(){
 	for(var i=0; i<0x30; i++) mVCOM[i]=0;
 	for(var i=0; i<4; i++) for(var j=0; j<0x20; j++) mOP[i][j]=0;
 
-//	var fnc = document.getElementById("function");
-//	fnc.partmode.value	= strPartmode[1];
+	var fnc = document.getElementById("function");
+	fnc.trans.value	= 12;
 //	var ope = document.getElementById("op1");
 //	ope.opon.checked =1;
-	var vname = document.getElementById("vname");
-	vname.value = 'a';
-	vname.value += 'b';
-	vname.value += 'c';
-	vname.value += 'd';
+//	var vname = document.getElementById("vname");
+//	vname.value = 'a';
+//	vname.value += 'b';
+//	vname.value += 'c';
+//	vname.value += 'd';
 
 	var hoge = setInterval(function() {
 		if (inputs != null) {
@@ -50,6 +50,12 @@ function goload()
 	var ex1 = [0x43,0x20,0x7f,0x1c,0x05,0x0e,0x0f,0x00];
 	
 	outSysEx(ex1,ex1.length);
+}
+
+function sendSysExOP(am,addr,data)
+{
+	var ex2 = [0x43,0x10,0x7f,0x1c,0x05,0x30,am,0x00,data];
+	outSysEx(ex2,ex2.length);
 }
 
 function handleMIDIMessage( event)
@@ -103,3 +109,15 @@ function saveMEM(event,st,ah,am,al,length)
 			break;
 	}
 }
+
+function sarchNumber(strarray,name){
+	var rtn=-1;
+
+	for(var i=0; i<strarray.length; i++){
+		if(strarray[i]==name){ rtn=i; break; }
+	}
+
+	return rtn;
+}
+
+

@@ -87,3 +87,85 @@ function setFormOP(am)
 	mod.cuv_r.value		= strcCuv[mOP[am][cCuv_r]];
 
 }
+
+function sendFormOp(am,e)
+{
+	var addr=0;
+	var data=e.valueAsNumber;
+
+	switch(e.name){
+		case 'opon':
+			data = (e.checked? 1: 0);
+			addr = cOpon;
+			break;
+		case 'ratio':
+			data = sarchNumber(strcRatio,e.value);
+			addr = cRatio;
+			break;
+		case 'freq':
+//			mOP[am][cFcoarse] +mOP[am][cFfine]<<5;
+//			addr = cFcoarse;
+//			addr = cFfine;
+			break;
+		case 'detune':
+			data = data +64;
+			addr = cRatio;
+			break;
+		case 'vels':
+			addr = cVels;
+			break;
+		case 'level':
+			addr = cLevel;
+			break;
+
+		case 'fbtype':
+			data = sarchNumber(strcFbtype,e.value);
+			addr = cFbtype;
+			break;
+		case 'fblevel':
+			addr = cFblevel;
+			break;
+
+		case 'rate1':
+			addr = cArate1;
+			break;
+		case 'rate2':
+			addr = cArate2;
+			break;
+		case 'rate3':
+			addr = cArate3;
+			break;
+		case 'rate4':
+			addr = cArate4;
+			break;
+		case 'level1':
+			addr = cAlevel1;
+			break;
+		case 'level2':
+			addr = cAlevel2;
+			break;
+		case 'level3':
+			addr = cAlevel3;
+			break;
+		case 'level4':
+			addr = cAlevel4;
+			break;
+	}	
+
+	if( e.name!='freq'){
+		mOP[am][addr] = data;
+	} else {
+		mOP[am][cFcoarse] = data & 0x1F;
+		mOP[am][cFfine] = (data >>5)&0x7F;
+		addr = cFcoarse;
+		sendSysExOP(am,addr,mOP[am][cFcoarse]);
+		addr = cFfine;
+		sendSysExOP(am,addr,mOP[am][cFfine]);
+	}
+
+	log.innerText += addr;
+	log.innerText += " ";
+	log.innerText += data;
+
+}
+
