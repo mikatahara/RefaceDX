@@ -67,23 +67,23 @@ function setFormOP(am)
 	ope.fbtype.value	= strcFbtype[mOP[am][cFbtype]];
 	ope.fblevel.value	= mOP[am][cFblevel];
 
-	ope.rate1,value		= mOP[am][cArate1	];
-	ope.rate2,value		= mOP[am][cArate2 ];
-	ope.rate3,value		= mOP[am][cArate3 ];
-	ope.rate4,value		= mOP[am][cArate4 ];
-	ope.level1,value	= mOP[am][cAlevel1];
-	ope.level2,value	= mOP[am][cAlevel2];
-	ope.level3,value	= mOP[am][cAlevel3];
-	ope.level4,value	= mOP[am][cAlevel4];
+	ope.rate1.value		= mOP[am][cArate1	];
+	ope.rate2.value		= mOP[am][cArate2 ];
+	ope.rate3.value		= mOP[am][cArate3 ];
+	ope.rate4.value		= mOP[am][cArate4 ];
+	ope.level1.value	= mOP[am][cAlevel1];
+	ope.level2.value	= mOP[am][cAlevel2];
+	ope.level3.value	= mOP[am][cAlevel3];
+	ope.level4.value	= mOP[am][cAlevel4];
 
-	mod.amd,value		= mOP[am][cAmd	];
-	mod.pmd,checked		= mOP[am][cPmd	];
-	mod.peg,checked		= mOP[am][cPeg	];
+	mod.amd.value		= mOP[am][cAmd	];
+	mod.pmd.checked		= mOP[am][cPmd	];
+	mod.peg.checked		= mOP[am][cPeg	];
 
-	mod.kscr,value		= mOP[am][cKscr];
-	mod.lvl_l,value		= mOP[am][cLvl_l];
-	mod.lvl_r,value		= mOP[am][cLvl_r];
-	mod.cuv_l,value		= strcCuv[mOP[am][cCuv_l]];
-	mod.cuv_r,value		= strcCuv[mOP[am][cCuv_r]];
+	mod.kscr.value		= mOP[am][cKscr];
+	mod.lvl_l.value		= mOP[am][cLvl_l];
+	mod.lvl_r.value		= mOP[am][cLvl_r];
+	mod.cuv_l.value		= strcCuv[mOP[am][cCuv_l]];
+	mod.cuv_r.value		= strcCuv[mOP[am][cCuv_r]];
 
 }
