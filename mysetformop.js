@@ -20,9 +20,9 @@ var cPeg		= cPmd+1;
 
 var cVels		= cPeg+1;
 var cLevel		= cVels+1;
-var cFbtype		= cLevel+1;
-var cFblevel	= cFbtype+1;
-var cRatio		= cFblevel+1;
+var cFblevel	= cLevel+1;
+var cFbtype		= cFblevel+1;
+var cRatio		= cFbtype+1;
 var cFcoarse	= cRatio+1;
 var cFfine		= cFcoarse+1;
 var cDetune		= cFfine+1;
