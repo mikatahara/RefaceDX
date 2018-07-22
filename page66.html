@@ -7,6 +7,9 @@
 	<script src="https://mikatahara.github.io/mywebmidiapi.js" type="text/javascript"></script>
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
 	<script src="myrefacedx.js" type="text/javascript"></script>
+	<script src="mysetformop.js" type="text/javascript"></script>
+	<script src="mysetformvcom.js" type="text/javascript"></script>
+	<script src="myrefacedxevent.js" type="text/javascript"></script>
 
 	<title>Re:faceDX Editor</title>
 
@@ -186,30 +189,30 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <td>
 <input type="number" name="rate1"  step="1" min="0" max="127" value="0">
 </td><td>
-<input type="number" name="level1"  step="1" min="0" max="127" value="0">
+<input type="number" name="level1"  step="1" min="-48" max="48" value="0">
 </td><td>
 <input type="number" name="rate2"  step="1" min="0" max="127" value="0">
 </td><td>
-<input type="number" name="level2"  step="1" min="0" max="127" value="0">
+<input type="number" name="level2"  step="1" min="-48" max="48" value="0">
 </td><td>
 <input type="number" name="rate3"  step="1" min="0" max="127" value="0">
 </td><td>
-<input type="number" name="level3"  step="1" min="0" max="127" value="0">
+<input type="number" name="level3"  step="1" min="-48" max="48" value="0">
 </td><td>
 <input type="number" name="rate4"  step="1" min="0" max="127" value="0">
 </td><td>
-<input type="number" name="level4"  step="1" min="0" max="127" value="0">
+<input type="number" name="level4"  step="1" min="-48" max="48" value="0">
 </td>
 <td width="2"></td>
 <td>
 <select name="wave">
 <option value="saw">SIN</option>
-<option value="squ">TRI</option>
-<option value="squ">SAW U</option>
-<option value="squ">SAW D</option>
-<option value="squ">SQ</option>
-<option value="squ">S&H8</option>
-<option value="squ">S&H</option>
+<option value="tri">TRI</option>
+<option value="sawu">SAW U</option>
+<option value="sawd">SAW D</option>
+<option value="squ">SQU</option>
+<option value="sh8">S&H8</option>
+<option value="sh">S&H</option>
 </select>
 </td><td>
 <input type="number" name="speed"  step="1" min="0" max="127" value="0">
@@ -257,12 +260,12 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <td align="center">lev3</td>
 <td align="center">rate4</td>
 <td align="center">lev4</td>
-</tr>
+</form></tr>
 <!--- --->
 <tr><form id="op1">
 <td align="center">1</td>
 <td align="center">
-<input type="checkbox" id="opon" value=1 >
+<input type="checkbox" name="opon" id='opon1' value=1 >
 </td><td>
 <select name="ratio">
 <option value="ratio">RATIO</option>
@@ -306,7 +309,7 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <tr><form id="op2">
 <td align="center">2</td>
 <td align="center">
-<input type="checkbox" id="opon" value=1 >
+<input type="checkbox" name="opon" value=1 >
 </td><td>
 <select name="ratio">
 <option value="ratio">RATIO</option>
@@ -350,7 +353,7 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <tr><form id="op3">
 <td align="center">3</td>
 <td align="center">
-<input type="checkbox" id="opon" value=1 >
+<input type="checkbox" name="opon" value=1 >
 </td><td>
 <select name="ratio">
 <option value="ratio">RATIO</option>
@@ -394,7 +397,7 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <tr><form id="op4">
 <td align="center">4</td>
 <td align="center">
-<input type="checkbox" id="opon" value=1 >
+<input type="checkbox" name="opon" value=1 >
 </td><td>
 <select name="ratio">
 <option value="ratio">RATIO</option>
@@ -446,7 +449,7 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <td></td>
 <td colspan="3" align="center" bgcolor="#d0e0f0">lfo</td>
 <td></td>
-<td colspan="4" align="center" bgcolor="#d0e0f0">key scaling</td>
+<td colspan="5" align="center" bgcolor="#d0e0f0">key scaling</td>
 </tr>
 
 <!--- --->
@@ -456,9 +459,10 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <td align="center">pmd</td>
 <td align="center">peg</td>
 <td width="2"></td>
+<td align="center">ksc-r</td>
 <td align="center">lev</td>
-<td align="center">cuv_R</td>
 <td align="center">cuv_L</td>
+<td align="center">cuv_R</td>
 <td align="center">lev</td>
 </tr>
 
@@ -474,23 +478,25 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 </td>
 <td width="2"></td>
 <td>
-<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
-</td><td>
-<select name="cuv_r">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
-</select>
-</td><td>
-<select name="cuv_l">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
-</select>
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
 </td><td>
 <input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">
+</td><td>
+<select name="cuv_l">
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
+</select>
+</td><td>
+<select name="cuv_r">
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
+</select>
+</td><td>
+<input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
 </td><td>
 </form></tr>
 <!--- --->
@@ -505,20 +511,22 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 </td>
 <td width="2"></td>
 <td>
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
+</td><td>
 <input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
 </td><td>
 <select name="cuv_r">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
 </select>
 </td><td>
 <select name="cuv_l">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
 </select>
 </td><td>
 <input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">
@@ -536,20 +544,22 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 </td>
 <td width="2"></td>
 <td>
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
+</td><td>
 <input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
 </td><td>
 <select name="cuv_r">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
 </select>
 </td><td>
 <select name="cuv_l">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
 </select>
 </td><td>
 <input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">
@@ -567,20 +577,22 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 </td>
 <td width="2"></td>
 <td>
+<input type="number" name="kscr"  step="1" min="0" max="127" value="0">
+</td><td>
 <input type="number" name="lvl_r"  step="1" min="0" max="127" value="0">
 </td><td>
 <select name="cuv_r">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
 </select>
 </td><td>
 <select name="cuv_l">
-<option value="saw">-LIN</option>
-<option value="squ">-EXP</option>
-<option value="squ">+EXP</option>
-<option value="saw">+LIN</option>
+<option value="mlin">-LIN</option>
+<option value="mexp">-EXP</option>
+<option value="pexp">+EXP</option>
+<option value="plin">+LIN</option>
 </select>
 </td><td>
 <input type="number" name="lvl_l"  step="1" min="0" max="127" value="0">

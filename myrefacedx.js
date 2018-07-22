@@ -15,6 +15,11 @@ window.addEventListener("load", function(){
 	for(var i=0; i<0x30; i++) mVCOM[i]=0;
 	for(var i=0; i<4; i++) for(var j=0; j<0x20; j++) mOP[i][j]=0;
 
+//	var fnc = document.getElementById("function");
+//	fnc.partmode.value	= strPartmode[1];
+	var ope = document.getElementById("op1");
+	ope.opon.checked =1;
+
 	var hoge = setInterval(function() {
 		if (inputs != null) {
 			setInputMenuID(document.input_device_select.ids);
@@ -34,22 +39,6 @@ function inputDeviceSelect2(e)
 	inputDeviceSelect(e);
 	input.onmidimessage = handleMIDIMessage;
 }
-
-
-$(document).ready(function(){
-	$('#send').click(function() {
-		console.log('sendがクリックされました！');
-	});
-
-	$('#load').click(function() {
-		goload();
-	});
-
-	$('button').click(function() {
-		console.log('クリックされました！');
-	});	
-});
-
 
 function goload()
 {
@@ -105,72 +94,7 @@ function saveMEM(event,st,ah,am,al,length)
 			for(i=0; i<length; i++){
 				mOP[am][i]=event.data[st+i];
 			}
+			setFormOP(am);
 			break;
 	}
 }
-
-var cTrans 		= 0x0C;
-var cPartmode 	= cTrans+1;
-var cPortament	= cPartmode+1;
-var cPitchbend	= cPortament+1;
-
-var cMalg		= cPitchbend+1;	//0x10
-
-var cWave 		= cMalg+1;
-var cSpeed 		= cWave+1;
-var cDelay 		= cSpeed+1;
-var cPmd 		= cDelay+1;
-
-var cMrate1		= cPmd+1;		//0x15
-var cMrate2		= cMrate1+1
-var cMrate3		= cMrate2+1
-var cMrate4		= cMrate3+1
-var cMlevel1	= cMrate4+1
-var cMlevel2	= cMlevel1+1
-var cMlevel3	= cMlevel2+1
-var cMlevel4	= cMlevel3+1
-
-var cEf1type	= cMlevel4+1;	//0x1D
-var cEf1param1	= cEf1type+1;
-var cEf1param2	= cEf1param1+1;
-var cEf2type	= cEf1param2+1;
-var cEf2param1	= cEf2type+1;
-var cEf2param2	= cEf2param1+1;
-
-
-function setFormVCOM()
-{
-	var fnc = document.getElementById("function");
-
-	fnc.trans.value 	= mVCOM[cTrans];
-	fnc.partmode.value	= mVCOM[cPartmode];
-	fnc.portament.value = mVCOM[cPortament];
-	fnc.pitchbend.value = mVCOM[cPitchbend];
-
-	var efct1 = document.getElementById("effect1");
-	efct1.type.value	= mVCOM[cEf1type];
-	efct1.param1.value	= mVCOM[cEf1param1];
-	efct1.param2.value	= mVCOM[cEf1param2];
-
-	var efct2 = document.getElementById("effect2");
-	efct2.type.value	= mVCOM[cEf2type];
-	efct2.param1.value	= mVCOM[cEf1param2];
-	efct2.param2.value	= mVCOM[cEf2param2];
-
-	var main = document.getElementById("main");
-	main.alg.value		= mVCOM[cMalg];
-	main.wave.value		= mVCOM[cWave];
-	main.speed.value	= mVCOM[cSpeed];
-	main.delay.value	= mVCOM[cDelay];
-	main.pmd.value		= mVCOM[cPmd];
-
-	main.rate1.value	= mVCOM[cMrate1];
-	main.level1.value	= mVCOM[cMlevel1];
-	main.rate2.value	= mVCOM[cMrate2];
-	main.level2.value	= mVCOM[cMlevel2];
-	main.rate3.value	= mVCOM[cMrate3];
-	main.level3.value	= mVCOM[cMlevel3];
-	main.rate4.value	= mVCOM[cMrate4];
-	main.level4.value	= mVCOM[cMlevel4];
-}
-
