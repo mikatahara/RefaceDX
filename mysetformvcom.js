@@ -33,6 +33,9 @@ var strcWave    = ['sin','tri','sawu','sawd','squ','sh8','sh'];
 
 function setFormVCOM()
 {
+	var vname = document.getElementById("vname");
+	for(var i=0; i<10; i++) vname.value[i] = mVCOM[i];
+
 	var fnc = document.getElementById("function");
 
 	fnc.trans.value 	= mVCOM[cTrans]-64;
