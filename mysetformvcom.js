@@ -30,11 +30,13 @@ var cEf2param2	= cEf2param1+1;
 var strPartmode = ['poly','full','legto'];
 var strcEftype  = ['thru','dist','twah','cho','fla','pha','dly','rev'];
 var strcWave    = ['sin','tri','sawu','sawd','squ','sh8','sh'];
+var namebuf		= [0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20];
 
 function setFormVCOM()
 {
+	for(var i=0; i<10; i++) namebuf[i] = mVCOM[i];
 	var vname = document.getElementById("vname");
-	for(var i=0; i<10; i++) vname.value[i] = mVCOM[i];
+	vname.value = namebuf;
 
 	var fnc = document.getElementById("function");
 

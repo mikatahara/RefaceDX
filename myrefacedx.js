@@ -17,8 +17,10 @@ window.addEventListener("load", function(){
 
 //	var fnc = document.getElementById("function");
 //	fnc.partmode.value	= strPartmode[1];
-	var ope = document.getElementById("op1");
-	ope.opon.checked =1;
+//	var ope = document.getElementById("op1");
+//	ope.opon.checked =1;
+	var vname = document.getElementById("vname");
+	vname.value = "aaaaaaaaaa";
 
 	var hoge = setInterval(function() {
 		if (inputs != null) {
