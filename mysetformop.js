@@ -15,8 +15,8 @@ var cCuv_l		= cLvl_r+1;
 var cCuv_r		= cCuv_l+1;
 
 var cAmd		= cCuv_r+1;
-var cPmd		= cAmd+1;
-var cPeg		= cPmd+1;
+var cPmdsw		= cAmd+1;
+var cPeg		= cPmdsw+1;
 
 var cVels		= cPeg+1;
 var cLevel		= cVels+1;
@@ -77,7 +77,7 @@ function setFormOP(am)
 	ope.level4.value	= mOP[am][cAlevel4];
 
 	mod.amd.value		= mOP[am][cAmd	];
-	mod.pmd.checked		= mOP[am][cPmd	];
+	mod.pmd.checked		= mOP[am][cPmdsw];
 	mod.peg.checked		= mOP[am][cPeg	];
 
 	mod.kscr.value		= mOP[am][cKscr];
