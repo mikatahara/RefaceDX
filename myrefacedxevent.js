@@ -8,15 +8,23 @@ $(document).ready(function(){
 		goload();
 	});
 
-	$('#op2 . input[name=opon]').click(function(){
-		log.innerText += "OP1";
+	$('#1_opon').click(function(){
+		log.innerText += "A";
+    });
+	$('#1_freq').change(function(){
+		log.innerText += "B";
+    });
+	$('#1_detune').change(function(){
+		log.innerText += "C";
+    });
+	$('#1_level').change(function(){
+		log.innerText += "D";
+    });
+	$('#1_vels').change(function(){
+		log.innerText += "E";
     });
 
-//	$('input[name="opon"]').click(function() {
-//		log.innerText += "OPON";
-//	});
-//
-	$('.op1').click( function(){
+	$('#op2').click( function(){
 		log.innerText += "OP2";
 	});
 
