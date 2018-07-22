@@ -35,29 +35,14 @@ window.addEventListener("load", function(){
 			if(output_menu_id!=null) setOutputDeviceSelect();
 			clearInterval(hoge);
 
-sendSysExOP(0,cFine,00);
-sendSysExOP(0,cCoarse,00);
-
-sendSysExOP(0,cFine,01);
-sendSysExOP(0,cCoarse,00);
-
-sendSysExOP(0,cFine,02);
-sendSysExOP(0,cCoarse,00);
-
-sendSysExOP(0,cFine,03);
-sendSysExOP(0,cCoarse,00);
-
-sendSysExOP(0,cFine,00);
-sendSysExOP(0,cCoarse,01);
-
-sendSysExOP(0,cFine,00);
-sendSysExOP(0,cCoarse,02);
-
-sendSysExOP(0,cFine,00);
-sendSysExOP(0,cCoarse,03);
-
-sendSysExOP(0,cFine,00);
-sendSysExOP(0,cCoarse,04);
+sendSysExOP(0,cFfine,00);
+sendSysExOP(0,cFCoarse,00);
+sendSysExOP(0,cFfine,00);
+sendSysExOP(0,cFCoarse,01);
+sendSysExOP(0,cFfine,00);
+sendSysExOP(0,cFCoarse,02);
+sendSysExOP(0,cFfine,00);
+sendSysExOP(0,cFCoarse,03);
 
 		}
 	}, 200);
