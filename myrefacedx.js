@@ -48,7 +48,6 @@ function inputDeviceSelect2(e)
 function goload()
 {
 	var ex1 = [0x43,0x20,0x7f,0x1c,0x05,0x0e,0x0f,0x00];
-	
 	outSysEx(ex1,ex1.length);
 }
 
