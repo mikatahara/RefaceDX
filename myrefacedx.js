@@ -15,8 +15,8 @@ window.addEventListener("load", function(){
 	for(var i=0; i<0x30; i++) mVCOM[i]=0;
 	for(var i=0; i<4; i++) for(var j=0; j<0x20; j++) mOP[i][j]=0;
 
-	var fnc = document.getElementById("function");
-	fnc.trans.value	= 12;
+//	var fnc = document.getElementById("function");
+//	fnc.trans.value	= 12;
 //	var ope = document.getElementById("op1");
 //	ope.opon.checked =1;
 //	var vname = document.getElementById("vname");
@@ -34,6 +34,31 @@ window.addEventListener("load", function(){
 			}
 			if(output_menu_id!=null) setOutputDeviceSelect();
 			clearInterval(hoge);
+
+sendSysExOP(0,cFine,00);
+sendSysExOP(0,cCoarse,00);
+
+sendSysExOP(0,cFine,01);
+sendSysExOP(0,cCoarse,00);
+
+sendSysExOP(0,cFine,02);
+sendSysExOP(0,cCoarse,00);
+
+sendSysExOP(0,cFine,03);
+sendSysExOP(0,cCoarse,00);
+
+sendSysExOP(0,cFine,00);
+sendSysExOP(0,cCoarse,01);
+
+sendSysExOP(0,cFine,00);
+sendSysExOP(0,cCoarse,02);
+
+sendSysExOP(0,cFine,00);
+sendSysExOP(0,cCoarse,03);
+
+sendSysExOP(0,cFine,00);
+sendSysExOP(0,cCoarse,04);
+
 		}
 	}, 200);
 
