@@ -109,7 +109,7 @@ function sendFormOp(am,e)
 			break;
 		case 'detune':
 			data = data +64;
-			addr = cRatio;
+			addr = cDetune;
 			break;
 		case 'vels':
 			addr = cVels;
