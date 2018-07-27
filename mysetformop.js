@@ -90,23 +90,25 @@ function setFormOP(am)
 
 var mAddrOp=null;
 
-mAddrOp['opon'  ] = cOpon;
-mAddrOp['ratio' ] = cRatio;
-mAddrOp['ffine' ] = cFfine;
-mAddrOp['fcoarse'] = cFcoarse;
-mAddrOp['detune'] = cDetune;
-mAddrOp['vels'  ] = cVels;
-mAddrOp['level' ] = cLevel;
-mAddrOp['fbtype'] = cFbtype;
-mAddrOp['fblevel'] = cFblevel;
-mAddrOp['rate1' ] = cArate1;
-mAddrOp['rate2' ] = cArate2;
-mAddrOp['rate3' ] = cArate3;
-mAddrOp['rate4' ] = cArate4;
-mAddrOp['level1'] = cAlevel1;
-mAddrOp['level2'] = cAlevel2;
-mAddrOp['level3'] = cAlevel3;
-mAddrOp['level4'] = cAlevel4;
+var mAddrOp = {
+	'opon' 		:cOpon,
+	'ratio'		:cRatio,
+	'ffine'		:cFfine,
+	'fcoarse'	:cFcoarse,
+	'detune' 	:cDetune,
+	'vels'   	:cVels,
+	'level' 	:cLevel,
+	'fbtype'	:cFbtype,
+	'fblevel'	:cFblevel,
+	'rate1' 	:cArate1,
+	'rate2' 	:cArate2,
+	'rate3' 	:cArate3,
+	'rate4' 	:cArate4,
+	'level1'	:cAlevel1,
+	'level2'	:cAlevel2,
+	'level3'	:cAlevel3,
+	'level4'	:cAlevel4
+};
 
 function sendFormOp(am,e)
 {
