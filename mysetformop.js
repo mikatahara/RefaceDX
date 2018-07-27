@@ -150,7 +150,7 @@ function sendFormOp(am,e)
 var mAddrMod = {
 	'amd'		:cAmd,
 	'pmdsw'		:cPmdsw,
-	'pwg'		:cPeg,
+	'peg'		:cPeg,
 	'kscr'		:cKscr,
 	'lvl_l'		:cLvl_l,
 	'lvl_r'		:cLvl_r,
