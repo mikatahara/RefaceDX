@@ -103,8 +103,5 @@ function sendFormFunction(e)
 	}
 
 	sendSysExOP(am,addr,data);
-
-}
-
 }
 
