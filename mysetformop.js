@@ -163,7 +163,9 @@ function sendFormMod(am,e)
 	var addr=mAddrMod[e.name];
 	var data=e.valueAsNumber;
 
-	if(e.name=='cuv_l' || e.name=='cuv_r'){
+	if(e.name=='pmdsw' || e.name=='pwg'){
+		data = (e.checked? 1: 0);
+	} else 	if(e.name=='cuv_l' || e.name=='cuv_r'){
 		data = sarchNumber(strcCuv,e.value);
 	}
 
