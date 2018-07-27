@@ -77,7 +77,7 @@ function setFormOP(am)
 	ope.level4.value	= mOP[am][cAlevel4];
 
 	mod.amd.value		= mOP[am][cAmd	];
-	mod.pmd.checked		= mOP[am][cPmdsw];
+	mod.pmdsw.checked	= mOP[am][cPmdsw];
 	mod.peg.checked		= mOP[am][cPeg	];
 
 	mod.kscr.value		= mOP[am][cKscr];
