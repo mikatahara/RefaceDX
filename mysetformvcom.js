@@ -79,12 +79,6 @@ var mAddrFunction = {
 	'pitchbend'		:cPitchbend,
 };
 
-	fnc.trans.value 	= mVCOM[cTrans]-64;
-	fnc.partmode.value	= strPartmode[mVCOM[cPartmode]];
-	fnc.portament.value = mVCOM[cPortament];
-	fnc.pitchbend.value = mVCOM[cPitchbend]-64;
-
-
 function sendFormFunction(e)
 {
 	var addr=mAddrMod[e.name];
