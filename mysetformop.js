@@ -88,8 +88,6 @@ function setFormOP(am)
 
 }
 
-var mAddrOp=null;
-
 var mAddrOp = {
 	'opon' 		:cOpon,
 	'ratio'		:cRatio,
@@ -149,15 +147,16 @@ function sendFormOp(am,e)
 
 }
 
-var mAddrMod=null;
-mAddrMod['amd'  ] = cAmd;
-mAddrMod['pmdsw'] = cPmdsw;
-mAddrMod['pwg'  ] = cPeg;
-mAddrMod['kscr' ] = cKscr;
-mAddrMod['lvl_l'] = cLvl_l
-mAddrMod['lvl_r'] = cLvl_r
-mAddrMod['cuv_l'] = cCuv_l;
-mAddrMod['cuv_r'] = cCuv_r;
+var mAddrMod = {
+	'amd'		:cAmd,
+	'pmdsw'		:cPmdsw,
+	'pwg'		:cPeg,
+	'kscr'		:cKscr,
+	'lvl_l'		:cLvl_l,
+	'lvl_r'		:cLvl_r,
+	'cuv_l'		:cCuv_l,
+	'cuv_r'		:cCuv_r
+};
 
 function sendFormMod(am,e)
 {
