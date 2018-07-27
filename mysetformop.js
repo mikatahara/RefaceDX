@@ -88,67 +88,44 @@ function setFormOP(am)
 
 }
 
+var mAddrOp=null;
+
+mAddrOp['opon'  ] = cOpon;
+mAddrOp['ratio' ] = cRatio;
+mAddrOp['ffine' ] = cFfine;
+mAddrOp['fcoarse'] = cFcoarse;
+mAddrOp['detune'] = cDetune;
+mAddrOp['vels'  ] = cVels;
+mAddrOp['level' ] = cLevel;
+mAddrOp['fbtype'] = cFbtype;
+mAddrOp['fblevel'] = cFblevel;
+mAddrOp['rate1' ] = cArate1;
+mAddrOp['rate2' ] = cArate2;
+mAddrOp['rate3' ] = cArate3;
+mAddrOp['rate4' ] = cArate4;
+mAddrOp['level1'] = cAlevel1;
+mAddrOp['level2'] = cAlevel2;
+mAddrOp['level3'] = cAlevel3;
+mAddrOp['level4'] = cAlevel4;
+
 function sendFormOp(am,e)
 {
-	var addr=0;
+	var addr=mAddrOp[e.name];
 	var data=e.valueAsNumber;
 
 	switch(e.name){
 		case 'opon':
 			data = (e.checked? 1: 0);
-			addr = cOpon;
 			break;
 		case 'ratio':
 			data = sarchNumber(strcRatio,e.value);
-			addr = cRatio;
-			break;
-		case 'freq':
-//			mOP[am][cFcoarse] +mOP[am][cFfine]<<5;
-//			addr = cFcoarse;
-//			addr = cFfine;
 			break;
 		case 'detune':
 			data = data +64;
-			addr = cDetune;
-			break;
-		case 'vels':
-			addr = cVels;
-			break;
-		case 'level':
-			addr = cLevel;
 			break;
 
 		case 'fbtype':
 			data = sarchNumber(strcFbtype,e.value);
-			addr = cFbtype;
-			break;
-		case 'fblevel':
-			addr = cFblevel;
-			break;
-
-		case 'rate1':
-			addr = cArate1;
-			break;
-		case 'rate2':
-			addr = cArate2;
-			break;
-		case 'rate3':
-			addr = cArate3;
-			break;
-		case 'rate4':
-			addr = cArate4;
-			break;
-		case 'level1':
-			addr = cAlevel1;
-			break;
-		case 'level2':
-			addr = cAlevel2;
-			break;
-		case 'level3':
-			addr = cAlevel3;
-			break;
-		case 'level4':
-			addr = cAlevel4;
 			break;
 	}	
 
