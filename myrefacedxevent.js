@@ -44,12 +44,16 @@ function editvalue(e){
 			sendFormOp(3,e);
 			break;
 		case 'mod1':
+			sendFormMod(0,e);
 			break;
 		case 'mod2':
+			sendFormMod(1,e);
 			break;
 		case 'mod3':
+			sendFormMod(2,e);
 			break;
 		case 'mod4':
+			sendFormMod(3,e);
 			break;
 	}
 

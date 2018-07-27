@@ -170,3 +170,25 @@ function sendFormOp(am,e)
 
 }
 
+var mAddrMod=null;
+mAddrMod['amd'  ] = cAmd;
+mAddrMod['pmdsw'] = cPmdsw;
+mAddrMod['pwg'  ] = cPeg;
+mAddrMod['kscr' ] = cKscr;
+mAddrMod['lvl_l'] = cLvl_l
+mAddrMod['lvl_r'] = cLvl_r
+mAddrMod['cuv_l'] = cCuv_l;
+mAddrMod['cuv_r'] = cCuv_r;
+
+function sendFormMod(am,e)
+{
+	var addr=mAddrMod[e.name];
+	var data=e.valueAsNumber;
+
+	if(e.name=='cuv_l' || e.name=='cuv_r'){
+		data = sarchNumber(strcCuv,e.value);
+	}
+
+	sendSysExOP(am,addr,data);
+
+}

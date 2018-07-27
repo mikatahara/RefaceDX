@@ -34,16 +34,6 @@ window.addEventListener("load", function(){
 			}
 			if(output_menu_id!=null) setOutputDeviceSelect();
 			clearInterval(hoge);
-
-sendSysExOP(0,cFfine,0);
-sendSysExOP(0,cFcoarse,0);
-sendSysExOP(0,cFfine,0);
-sendSysExOP(0,cFcoarse,1);
-sendSysExOP(0,cFfine,0);
-sendSysExOP(0,cFcoarse,2);
-sendSysExOP(0,cFfine,0);
-sendSysExOP(0,cFcoarse,3);
-
 		}
 	}, 200);
 
