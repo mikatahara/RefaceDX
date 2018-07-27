@@ -23,10 +23,13 @@ function editvalue(e){
 
 	switch(e.form.id){
 		case 'function':
+			sendFormFunction(e);
 			break;
 		case 'effect1':
+			sendFormEffect1(e);
 			break;
 		case 'effect2':
+			sendFormEffect2(e);
 			break;
 		case 'main':
 			break;
