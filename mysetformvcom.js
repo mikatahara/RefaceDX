@@ -92,6 +92,24 @@ var mAddrEffect2 = {
 	'param2'		:cEf2param2,
 };
 
+
+var mAddrCommon = {
+	'alg'			:cMalg,
+	'wave'			:cWave,
+	'speed'			:cSpeed,
+	'delay'			:cDelay,
+	'pmd'			:cPmd,
+	'rate1'			:cMrate1,
+	'level1'		:cMlevel1,
+	'rate2'			:cMrate2,
+	'level2'		:cMlevel2,
+	'rate3'			:cMrate3,
+	'level3'		:cMlevel3,
+	'rate4'			:cMrate4,
+	'level4'		:cMlevel4,
+};
+
+
 function sendFormFunction(e)
 {
 	var addr=mAddrFunction[e.name];
@@ -131,6 +149,23 @@ function sendFormEffec2(e)
 
 	if(e.name=='type'){
 		data = sarchNumber(strcEftype,e.value);
+	}
+
+	sendSysExFunction(addr,data);
+}
+
+
+function sendFormCommon(e)
+{
+	var addr=mAddCommon[e.name];
+	var data=e.valueAsNumber;
+
+	if(e.name=='level1'||e.name=='level2'||e.name=='level3'||e.name=='level4'){
+		data += 64;
+	} else if(e.name=='alg'){
+		data -= 1;
+	} else if(e.name=='wave'){
+		data = sarchNumber(strcWave,e.value);
 	}
 
 	sendSysExFunction(addr,data);
