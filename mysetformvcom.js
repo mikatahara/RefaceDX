@@ -96,6 +96,6 @@ function sendFormFunction(e)
 			break;
 	}
 
-	sendSysExOP(am,addr,data);
+	sendSysExFunction(addr,data);
 }
 

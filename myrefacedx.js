@@ -57,6 +57,12 @@ function sendSysExOP(am,addr,data)
 	outSysEx(ex2,ex2.length);
 }
 
+function sendSysExFunction(addr,data)
+{
+	var ex3 = [0x43,0x10,0x7f,0x1c,0x05,0x30,0x00,addr,data];
+	outSysEx(ex3,ex3.length);
+}
+
 function handleMIDIMessage( event)
 {
 	var length, ah, am, al;
