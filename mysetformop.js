@@ -230,21 +230,21 @@ function checkFormOP(am)
 		sendFormMod(am,ope.level4);
 
 	if(mod.amd.value	!= mOP[am][cAmd	])
-		sendFormMod(am,.amd);
+		sendFormMod(am,mod.amd);
 	if(mod.pmdsw.checked!= mOP[am][cPmdsw])
-		sendFormMod(am,.pmdsw);
+		sendFormMod(am,mod.pmdsw);
 	if(mod.peg.checked	!= mOP[am][cPeg	])
-		sendFormMod(am,.peg);
+		sendFormMod(am,mod.peg);
 
 	if(mod.kscr.value	!= mOP[am][cKscr])
-		sendFormMod(am,.kscr);
+		sendFormMod(am,mod.kscr);
 	if(mod.lvl_l.value	!= mOP[am][cLvl_l])
-		sendFormMod(am,.lvl_l);
+		sendFormMod(am,mod.lvl_l);
 	if(mod.lvl_r.value	!= mOP[am][cLvl_r])
-		sendFormMod(am,.lvl_r);
+		sendFormMod(am,mod.lvl_r);
 	if(mod.cuv_l.value	!= strcCuv[mOP[am][cCuv_l]])
-		sendFormMod(am,.cuv_l);
+		sendFormMod(am,mod.cuv_l);
 	if(mod.cuv_r.value	!= strcCuv[mOP[am][cCuv_r]])
-		sendFormMod(am,.cuv_r);
+		sendFormMod(am,mod.cuv_r);
 }
 
