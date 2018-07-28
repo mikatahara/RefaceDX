@@ -41,7 +41,7 @@ function setFormVCOM()
 
 	fnc.trans.value 	= mVCOM[cTrans]-64;
 //	fnc.partmode.value	= strPartmode[mVCOM[cPartmode]];
-	fnc.partmode.value	= 'poly';
+	fnc.partmode.value	= 'legto';
 	fnc.portament.value = mVCOM[cPortament];
 	fnc.pitchbend.value = mVCOM[cPitchbend]-64;
 
