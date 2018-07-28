@@ -34,6 +34,11 @@ window.addEventListener("load", function(){
 			}
 			if(output_menu_id!=null) setOutputDeviceSelect();
 			clearInterval(hoge);
+
+			var hoge2 = setInterval(function() {
+				checkFormVCOM();
+			}, 500);
+
 		}
 	}, 200);
 

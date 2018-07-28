@@ -171,3 +171,47 @@ function sendFormCommon(e)
 	sendSysExFunction(addr,data);
 }
 
+function checkFormVCOM()
+{
+//	var vname = document.getElementById("vname");
+//	vname.value = '';
+//	for(var i=0; i<10; i++) vname.value += String.fromCharCode(mVCOM[i]);
+
+	var fnc = document.getElementById("function");
+
+	if( fnc.trans.value != mVCOM[cTrans]-64)
+		sendFormFunction(fnc.trans);
+	if( fnc.partmode.value	!= strPartmode[mVCOM[cPartmode]])
+		sendFormFunction(fnc.partmode);
+	if( fnc.portament.value != mVCOM[cPortament])
+		sendFormFunction(fnc.portament);
+	if( fnc.pitchbend.value != mVCOM[cPitchbend]-64)
+		sendFormFunction(fnc.pitchbend);
+/*
+	var efct1 = document.getElementById("effect1");
+	efct1.type.value	= strcEftype[mVCOM[cEf1type]];
+	efct1.param1.value	= mVCOM[cEf1param1];
+	efct1.param2.value	= mVCOM[cEf1param2];
+
+	var efct2 = document.getElementById("effect2");
+	efct2.type.value	= strcEftype[mVCOM[cEf2type]];
+	efct2.param1.value	= mVCOM[cEf1param2];
+	efct2.param2.value	= mVCOM[cEf2param2];
+
+	var main = document.getElementById("main");
+	main.alg.value		= mVCOM[cMalg]+1;
+	main.wave.value		= strcWave[mVCOM[cWave]];
+	main.speed.value	= mVCOM[cSpeed];
+	main.delay.value	= mVCOM[cDelay];
+	main.pmd.value		= mVCOM[cPmd];
+
+	main.rate1.value	= mVCOM[cMrate1];
+	main.level1.value	= mVCOM[cMlevel1]-64;
+	main.rate2.value	= mVCOM[cMrate2];
+	main.level2.value	= mVCOM[cMlevel2]-64;
+	main.rate3.value	= mVCOM[cMrate3];
+	main.level3.value	= mVCOM[cMlevel3]-64;
+	main.rate4.value	= mVCOM[cMrate4];
+	main.level4.value	= mVCOM[cMlevel4]-64;
+*/
+}
