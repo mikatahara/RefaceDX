@@ -80,6 +80,18 @@ var mAddrFunction = {
 	'pitchbend'		:cPitchbend,
 };
 
+var mAddrEffect1 = {
+	'type'			:cEf1type,
+	'param1'		:cEf1param1,
+	'param2'		:cEf1param2,
+};
+
+var mAddrEffect2 = {
+	'type'			:cEf2type,
+	'param1'		:cEf2param1,
+	'param2'		:cEf2param2,
+};
+
 function sendFormFunction(e)
 {
 	var addr=mAddrFunction[e.name];
@@ -95,6 +107,30 @@ function sendFormFunction(e)
 		case 'pitchbend':
 			data += 64;
 			break;
+	}
+
+	sendSysExFunction(addr,data);
+}
+
+function sendFormEffec1(e)
+{
+	var addr=mAddrEffect1[e.name];
+	var data=e.valueAsNumber;
+
+	if(e.name=='type'){
+		data = sarchNumber(strcEftype,e.value);
+	}
+
+	sendSysExFunction(addr,data);
+}
+
+function sendFormEffec2(e)
+{
+	var addr=mAddrEffect2[e.name];
+	var data=e.valueAsNumber;
+
+	if(e.name=='type'){
+		data = sarchNumber(strcEftype,e.value);
 	}
 
 	sendSysExFunction(addr,data);
