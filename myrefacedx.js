@@ -39,10 +39,10 @@ window.addEventListener("load", function(){
 			var hoge2 = setInterval(function() {
 				switch(mCnt){
 					case 0: checkFormVCOM(); break;
-					case 1: checkFormOP(1); break;
-					case 2: checkFormOP(2); break;
-					case 3: checkFormOP(3); break;
-					case 4: checkFormOP(4); break;
+					case 1: checkFormOP(0); break;
+					case 2: checkFormOP(1); break;
+					case 3: checkFormOP(2); break;
+					case 4: checkFormOP(3); break;
 				}
 				mCnt++; mCnt%=5;
 			}, 100);
