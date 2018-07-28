@@ -76,7 +76,7 @@ function setFormVCOM()
 var mAddrFunction = {
 	'trans'			:cTrans,
 	'partmode'		:cPartmode,
-	'porrtament'	:cPortament,
+	'portament'		:cPortament,
 	'pitchbend'		:cPitchbend,
 };
 
