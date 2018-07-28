@@ -45,7 +45,7 @@ window.addEventListener("load", function(){
 					case 4: checkFormOP(4); break;
 				}
 				mCnt++; mCnt%=5;
-			}, 300);
+			}, 100);
 
 		}
 	}, 200);
