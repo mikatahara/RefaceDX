@@ -1,5 +1,6 @@
 ﻿	var mVCOM=null;
 	var mOP=null;
+	var mCnt=0;
 
 window.addEventListener("load", function(){
 
@@ -36,8 +37,15 @@ window.addEventListener("load", function(){
 			clearInterval(hoge);
 
 			var hoge2 = setInterval(function() {
-				checkFormVCOM();
-			}, 500);
+				switch(mCnt){
+					case 0: checkFormVCOM(); break;
+					case 1: checkFormOP(1); break;
+					case 2: checkFormOP(2); break;
+					case 3: checkFormOP(3); break;
+					case 4: checkFormOP(4); break;
+				}
+				mCnt++; mCnt%=5;
+			}, 300);
 
 		}
 	}, 200);
