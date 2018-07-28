@@ -74,7 +74,7 @@ function savedata()
 	}
 	savetext +="\r\n";
 
-	for(k=0; k<4; i++){
+	for(k=0; k<4; k++){
 		for(i=0; i<0x20; i++){
 			savetext += mOP[k][i].toString(10);
 			savetext += " ";
