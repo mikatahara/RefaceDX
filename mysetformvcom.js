@@ -40,7 +40,8 @@ function setFormVCOM()
 	var fnc = document.getElementById("function");
 
 	fnc.trans.value 	= mVCOM[cTrans]-64;
-	fnc.partmode.value	= strPartmode[mVCOM[cPartmode]];
+//	fnc.partmode.value	= strPartmode[mVCOM[cPartmode]];
+	fnc.partmode.value	= 'poly';
 	fnc.portament.value = mVCOM[cPortament];
 	fnc.pitchbend.value = mVCOM[cPitchbend]-64;
 
