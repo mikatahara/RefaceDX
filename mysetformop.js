@@ -190,7 +190,7 @@ function checkFormOP(am)
 	}
 
 
-	if(ope.opon.checked	!= mOP[am][cOpon])
+	if((ope.opon.checked? 1: 0)	!= mOP[am][cOpon])
 		sendFormMod(am,ope.opon);
 
 	if(ope.ratio.value	!= strcRatio[mOP[am][cRatio	]])
@@ -231,9 +231,9 @@ function checkFormOP(am)
 
 	if(mod.amd.value	!= mOP[am][cAmd	])
 		sendFormMod(am,mod.amd);
-	if(mod.pmdsw.checked!= mOP[am][cPmdsw])
+	if((mod.pmdsw.checked? 1: 0)!= mOP[am][cPmdsw])
 		sendFormMod(am,mod.pmdsw);
-	if(mod.peg.checked	!= mOP[am][cPeg	])
+	if((mod.peg.checked? 1: 0)!= mOP[am][cPeg	])
 		sendFormMod(am,mod.peg);
 
 	if(mod.kscr.value	!= mOP[am][cKscr])
