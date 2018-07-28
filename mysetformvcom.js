@@ -186,31 +186,50 @@ function checkFormVCOM()
 		sendFormFunction(fnc.portament);
 	if( fnc.pitchbend.value != mVCOM[cPitchbend]-64)
 		sendFormFunction(fnc.pitchbend);
-/*
+
 	var efct1 = document.getElementById("effect1");
-	efct1.type.value	= strcEftype[mVCOM[cEf1type]];
-	efct1.param1.value	= mVCOM[cEf1param1];
-	efct1.param2.value	= mVCOM[cEf1param2];
+	if( efct1.type.value	!= strcEftype[mVCOM[cEf1type]])
+		sendFormEffec1(efct1.type);
+	if( efct1.param1.value	!= mVCOM[cEf1param1])
+		sendFormEffec1(efct1.param1);
+	if( efct1.param2.value	!= mVCOM[cEf1param2])
+		sendFormEffec1(efct1.param2);
 
 	var efct2 = document.getElementById("effect2");
-	efct2.type.value	= strcEftype[mVCOM[cEf2type]];
-	efct2.param1.value	= mVCOM[cEf1param2];
-	efct2.param2.value	= mVCOM[cEf2param2];
+	if( efct2.type.value	!= strcEftype[mVCOM[cEf2type]])
+		sendFormEffec2(efct2.type);
+	if( efct2.param1.value	!= mVCOM[cEf1param2])
+		sendFormEffec2(efct2.param1);
+	if( efct2.param2.value	!= mVCOM[cEf2param2])
+		sendFormEffec2(efct2.param2);
 
 	var main = document.getElementById("main");
-	main.alg.value		= mVCOM[cMalg]+1;
-	main.wave.value		= strcWave[mVCOM[cWave]];
-	main.speed.value	= mVCOM[cSpeed];
-	main.delay.value	= mVCOM[cDelay];
-	main.pmd.value		= mVCOM[cPmd];
+	if( main.alg.value		!= mVCOM[cMalg]+1)
+		sendFormCommon(main.alg);
+	if( main.wave.value		!= strcWave[mVCOM[cWave]])
+		sendFormCommon(main.wave);
+	if( main.speed.value	!= mVCOM[cSpeed])
+		sendFormCommon(main.speed);
+	if( main.delay.value	!= mVCOM[cDelay])
+		sendFormCommon(main.delay);
+	if( main.pmd.value		!= mVCOM[cPmd])
+		sendFormCommon(main.pmd);
 
-	main.rate1.value	= mVCOM[cMrate1];
-	main.level1.value	= mVCOM[cMlevel1]-64;
-	main.rate2.value	= mVCOM[cMrate2];
-	main.level2.value	= mVCOM[cMlevel2]-64;
-	main.rate3.value	= mVCOM[cMrate3];
-	main.level3.value	= mVCOM[cMlevel3]-64;
-	main.rate4.value	= mVCOM[cMrate4];
-	main.level4.value	= mVCOM[cMlevel4]-64;
-*/
+	if( main.rate1.value	!= mVCOM[cMrate1])
+		sendFormCommon(main.rate1);
+	if( main.level1.value	!= mVCOM[cMlevel1]-64)
+		sendFormCommon(main.level1);
+	if( main.rate2.value	!= mVCOM[cMrate2])
+		sendFormCommon(main.rate2);
+	if( main.level2.value	!= mVCOM[cMlevel2]-64)
+		sendFormCommon(main.level2);
+	if( main.rate3.value	!= mVCOM[cMrate3])
+		sendFormCommon(main.rate3);
+	if( main.level3.value	!= mVCOM[cMlevel3]-64)
+		sendFormCommon(main.level3);
+	if( main.rate4.value	!= mVCOM[cMrate4])
+		sendFormCommon(main.rate4);
+	if( main.level4.value	!= mVCOM[cMlevel4]-64)
+		sendFormCommon(main.level4);
 }
+

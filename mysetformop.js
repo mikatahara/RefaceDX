@@ -172,3 +172,84 @@ function sendFormMod(am,e)
 	sendSysExOP(am,addr,data);
 
 }
+
+function checkFormOP(am)
+{
+	var ope = null;
+	var mod = null;
+
+	switch(am){
+		case 0:
+			ope = document.getElementById("op1");
+			mod = document.getElementById("mod1");
+			break;
+		case 1:
+			ope = document.getElementById("op2");
+			mod = document.getElementById("mod2");
+			break;
+		case 2:
+			ope = document.getElementById("op3");
+			mod = document.getElementById("mod3");
+			break;
+		case 3:
+			ope = document.getElementById("op4");
+			mod = document.getElementById("mod4");
+			break;
+	}
+
+
+	if(ope.opon.checked	!= mOP[am][cOpon])
+		sendFormMod(am,ope.opon);
+
+	if(ope.ratio.value	!= strcRatio[mOP[am][cRatio	]])
+		sendFormMod(am,ope.ratio);
+	if(ope.freq.value 	!= mOP[am][cFcoarse] +mOP[am][cFfine]<<5)
+		sendFormMod(am,ope.freq);
+	if(ope.detune.value	!= mOP[am][cDetune]-64)
+		sendFormMod(am,ope.detune);
+
+	if(ope.vels.value	!= mOP[am][cVels	])
+		sendFormMod(am,ope.vels);
+	if(ope.level.value	!= mOP[am][cLevel	])
+		sendFormMod(am,ope.level);
+	if(ope.fbtype.value	!= strcFbtype[mOP[am][cFbtype]])
+		sendFormMod(am,ope.fbtype);
+	if(ope.fblevel.value!= mOP[am][cFblevel])
+		sendFormMod(am,ope.fblevel);
+
+	if(ope.rate1.value	!= mOP[am][cArate1 ])
+		sendFormMod(am,ope.rate1);
+	if(ope.rate2.value	!= mOP[am][cArate2 ])
+		sendFormMod(am,ope.rate2);
+	if(ope.rate3.value	!= mOP[am][cArate3 ])
+		sendFormMod(am,ope.rate3);
+	if(ope.rate4.value	!= mOP[am][cArate4 ])
+		sendFormMod(am,ope.rate4);
+	if(ope.level1.value	!= mOP[am][cAlevel1])
+		sendFormMod(am,ope.level1);
+	if(ope.level2.value	!= mOP[am][cAlevel2])
+		sendFormMod(am,ope.level2);
+	if(ope.level3.value	!= mOP[am][cAlevel3])
+		sendFormMod(am,ope.level3);
+	if(ope.level4.value	!= mOP[am][cAlevel4])
+		sendFormMod(am,ope.level4);
+
+	if(mod.amd.value	!= mOP[am][cAmd	])
+		sendFormMod(am,.amd);
+	if(mod.pmdsw.checked!= mOP[am][cPmdsw])
+		sendFormMod(am,.pmdsw);
+	if(mod.peg.checked	!= mOP[am][cPeg	])
+		sendFormMod(am,.peg);
+
+	if(mod.kscr.value	!= mOP[am][cKscr])
+		sendFormMod(am,.kscr);
+	if(mod.lvl_l.value	!= mOP[am][cLvl_l])
+		sendFormMod(am,.lvl_l);
+	if(mod.lvl_r.value	!= mOP[am][cLvl_r])
+		sendFormMod(am,.lvl_r);
+	if(mod.cuv_l.value	!= strcCuv[mOP[am][cCuv_l]])
+		sendFormMod(am,.cuv_l);
+	if(mod.cuv_r.value	!= strcCuv[mOP[am][cCuv_r]])
+		sendFormMod(am,.cuv_r);
+}
+

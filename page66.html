@@ -234,7 +234,7 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <!--- --->
 <tr>
 <td></td>
-<td colspan="4" align="center" bgcolor="#d0e0f0">op page1</td>
+<td colspan="5" align="center" bgcolor="#d0e0f0">op page1</td>
 <td></td>
 <td colspan="4" align="center" bgcolor="#d0e0f0">op page2</td>
 <td></td>
@@ -246,7 +246,8 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <td align="center">op</td>
 <td align="center">on</td>
 <td align="center">mode</td>
-<td align="center">freq</td>
+<td align="center">coarse</td>
+<td align="center">fine</td>
 <td align="center">detune</td>
 <td width="2"></td>
 <td align="center">level</td>
@@ -270,11 +271,13 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
 <select name="ratio" onChange="editvalue(this);">
-<option value="ratio">RATIO</option>
-<option value="fix">FIX</option>
+<option value="ratio">R</option>
+<option value="fix">F</option>
 </select>
 </td><td>
-<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
+<input type="number" name="coarse" step="1" min="0" max="15" value="10" onChange="editvalue(this);">
+</td><td>
+<input type="number" name="fine" step="1" min="0" max="63" value="0" onChange="editvalue(this);">
 </td><td>
 <input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
@@ -314,11 +317,13 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
 <select name="ratio" onChange="editvalue(this);">
-<option value="ratio">RATIO</option>
-<option value="fix">FIX</option>
+<option value="ratio">R</option>
+<option value="fix">F</option>
 </select>
 </td><td>
-<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
+<input type="number" name="coarse" step="1" min="0" max="15" value="10" onChange="editvalue(this);">
+</td><td>
+<input type="number" name="fine" step="1" min="0" max="63" value="0" onChange="editvalue(this);">
 </td><td>
 <input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
@@ -358,11 +363,13 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
 <select name="ratio" onChange="editvalue(this);">
-<option value="ratio">RATIO</option>
-<option value="fix">FIX</option>
+<option value="ratio">R</option>
+<option value="fix">F</option>
 </select>
 </td><td>
-<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
+<input type="number" name="coarse" step="1" min="0" max="15" value="10" onChange="editvalue(this);">
+</td><td>
+<input type="number" name="fine" step="1" min="0" max="63" value="0" onChange="editvalue(this);">
 </td><td>
 <input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
@@ -402,11 +409,13 @@ out: <select name="ids" onChange="outputDeviceSelect(this);">
 <input type="checkbox" name="opon" onChange="editvalue(this);" >
 </td><td>
 <select name="ratio" onChange="editvalue(this);">
-<option value="ratio">RATIO</option>
+<option value="ratio">R</option>
 <option value="fix">FIX</option>
 </select>
 </td><td>
-<input type="number" name="freq" step="1" min="1" max="3200" value="1" onChange="editvalue(this);">
+<input type="number" name="coarse" step="1" min="0" max="15" value="10" onChange="editvalue(this);">
+</td><td>
+<input type="number" name="fine" step="1" min="0" max="63" value="0" onChange="editvalue(this);">
 </td><td>
 <input type="number" name="detune" step="1" min="-64" max="63" value="0" onChange="editvalue(this);">
 </td><td width="2"></td><td>
