@@ -109,7 +109,6 @@ var mAddrCommon = {
 	'level4'		:cMlevel4,
 };
 
-
 function sendFormFunction(e)
 {
 	var addr=mAddrFunction[e.name];

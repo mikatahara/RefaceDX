@@ -19,7 +19,7 @@ function editvalue(e){
 
 	switch(e.form.id){
 		case 'function':
-			sendFormFuncion(e);
+			sendFormFunction(e);
 			break;
 		case 'effect1':
 			sendFormEffec1(e);
