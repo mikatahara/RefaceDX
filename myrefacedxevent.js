@@ -4,13 +4,9 @@ $(document).ready(function(){
 		log.innerText = 'sendがクリックされました！';
 	});
 
-	$('#load').click(function() {
+	$('#sync').click(function() {
 		goload();
 	});
-
-	$('#1_opon').click(function(){
-		log.innerText += "A";
-    });
 
 });
 
