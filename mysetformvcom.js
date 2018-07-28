@@ -81,7 +81,7 @@ var mAddrFunction = {
 
 function sendFormFunction(e)
 {
-	var addr=mAddrMod[e.name];
+	var addr=mAddrFunction[e.name];
 	var data=e.valueAsNumber;
 
 	switch(e.name){
