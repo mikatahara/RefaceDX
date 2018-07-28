@@ -123,103 +123,31 @@ function loaddata()
 
 }
 
-function readresult(text){
-	var i=0, kk=0, flag=0;
-	var chank=null;
-	var imenu=null;
+function readresult(text)
+{
 	var data;
 
-	log.textContent += text;
+	log.innerText += text;
 
-	seq_stop();
+	var line=text.split('\r\n');
+	var tVCOM = line[1].split(' ');
+	var tOP = new Array(4);
 
-	while(1){
-		chank = text.substr(i,7);
-		data=parseInt(text.substr(i+8,3));
-		log.textContent += data;
-		log.textContent += "\n";
-
-		kk=0;
-		flag=0;
-
-		if(!chank.localeCompare("tempo__")) {
-			imenu = document.getElementById("tempo");
-			imenu.value = data;
-			tempo = data;
-			beatx = Math.floor(60000/tempo/8);
-		}
-
-		else if(!chank.localeCompare("tone__0")) {
-			imenu = document.getElementById("tone0");
-			flag=1;
-			kk=0;
-		}
-		else if(!chank.localeCompare("tone__1")){
-			imenu = document.getElementById("tone1");
-			flag=1;
-			kk=1;
-		}
-		else if(!chank.localeCompare("tone__2")){
-			imenu = document.getElementById("tone2");
-			flag=1;
-			kk=2;
-		}
-		else if(!chank.localeCompare("tone__3")){
-			imenu = document.getElementById("tone3");
-			flag=1;
-			kk=3;
-		}
-
-		else if(!chank.localeCompare("volume0")){
-			imenu = document.getElementById("volume0");
-			flag=2;
-			kk=0;
-		}
-		else if(!chank.localeCompare("volume1")){
-			imenu = document.getElementById("volume1");
-			flag=2;
-			kk=1;
-		}
-		else if(!chank.localeCompare("volume2")){
-			imenu = document.getElementById("volume2");
-			flag=2;
-			kk=2;
-		}
-		else if(!chank.localeCompare("volume3")){
-			imenu = document.getElementById("volume3");
-			flag=2;
-			kk=3;
-		}
-
-		else if(!chank.localeCompare("track_0")){ flag=3; kk=0; }
-		else if(!chank.localeCompare("track_1")){ flag=3; kk=1; }
-		else if(!chank.localeCompare("track_2")){ flag=3; kk=2; }
-		else if(!chank.localeCompare("track_3")){ flag=3; kk=3; }
-
-		if(flag==1){
-			if(data>=45) data=45;
-			imenu.value = data;
-			tone[kk]=data+35;
-		}
-		else if(flag==2){
-			if(data>=127) data=127;
-			imenu.value = data;
-			dvol[kk]=data;
-		}
-		else if(flag==3){
-			for(var j=0; j<16; j++){
-				data=parseInt(text.substr(i+8+j*2,1));
-				toggle[j+kk*16]=data;
-			}
-			drawmatrix();
-		}
-
-		if(!chank.localeCompare("__end__")) break;
-
-		i+=7; if(i>=1000) break;
-		while(text[i]!="\n") i++;
-		i++;
-
+	for(i=0; i<0x30; i++){
+		data = parseInt(tVCOM[i],10);
+		mVCOM[i]=data;
 	}
+	setFormVCOM();
+
+
+	for (var i=0; i<4; i++){
+		tOP[i] = line[2+i].split(' ');
+		for(j=0; j<0x20; j++){
+			data = parseInt(tOP[i][j],10);
+			mOP[i][j]=data;
+		}
+		setFormOP(i);
+	}
+
 
 }
