@@ -59,7 +59,8 @@ function setFormOP(am)
 	ope.opon.checked	= mOP[am][cOpon 	];
 	
 	ope.ratio.value		= strcRatio[mOP[am][cRatio	]];
-	ope.freq.value 		= mOP[am][cFcoarse] +mOP[am][cFfine]<<5;
+	ope.coarse.value	= mOP[am][cFcoarse];
+	ope.fine.value 		= mOP[am][cFfine];
 	ope.detune.value	= mOP[am][cDetune]-64;
 
 	ope.vels.value		= mOP[am][cVels	];
@@ -91,8 +92,8 @@ function setFormOP(am)
 var mAddrOp = {
 	'opon' 		:cOpon,
 	'ratio'		:cRatio,
-	'ffine'		:cFfine,
-	'fcoarse'	:cFcoarse,
+	'coarse'	:cFcoarse,
+	'fine'		:cFfine,
 	'detune' 	:cDetune,
 	'vels'   	:cVels,
 	'level' 	:cLevel,
@@ -129,17 +130,8 @@ function sendFormOp(am,e)
 			break;
 	}	
 
-	if( e.name!='freq'){
-		mOP[am][addr] = data;
-		sendSysExOP(am,addr,data);
-	} else {
-		mOP[am][cFcoarse] = data & 0x1F;
-		mOP[am][cFfine] = (data >>5)&0x7F;
-		addr = cFcoarse;
-		sendSysExOP(am,addr,mOP[am][cFcoarse]);
-		addr = cFfine;
-		sendSysExOP(am,addr,mOP[am][cFfine]);
-	}
+	mOP[am][addr] = data;
+	sendSysExOP(am,addr,data);
 
 	log.innerText += addr;
 	log.innerText += " ";
@@ -203,8 +195,11 @@ function checkFormOP(am)
 
 	if(ope.ratio.value	!= strcRatio[mOP[am][cRatio	]])
 		sendFormMod(am,ope.ratio);
-	if(ope.freq.value 	!= mOP[am][cFcoarse] +mOP[am][cFfine]<<5)
-		sendFormMod(am,ope.freq);
+	if(ope.coarse.value != mOP[am][cFcoarse])
+		sendFormMod(am,ope.coarse);
+	if(ope.fine.value != mOP[am][cFfine])
+		sendFormMod(am,ope.fine);
+
 	if(ope.detune.value	!= mOP[am][cDetune]-64)
 		sendFormMod(am,ope.detune);
 
