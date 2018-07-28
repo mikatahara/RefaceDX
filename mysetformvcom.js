@@ -157,7 +157,7 @@ function sendFormEffec2(e)
 
 function sendFormCommon(e)
 {
-	var addr=mAddCommon[e.name];
+	var addr=mAddrCommon[e.name];
 	var data=e.valueAsNumber;
 
 	if(e.name=='level1'||e.name=='level2'||e.name=='level3'||e.name=='level4'){
