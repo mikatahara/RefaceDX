@@ -1,55 +1,7 @@
-﻿/* パラメータファイルの保存 */
-function savedata()
-{
-
-	var i,k;
-	var savetext='';
-
-	savetext += "tempo__:"
-	savetext += tempo.toString(10);
-	savetext +="\r\n";
-
-	for(k=0; k<4; k++){
-		savetext += "tone__"
-		savetext += k.toString(10);
-		savetext += ":";
-		savetext += (tone[k].toString(10)-35);
-		savetext +="\r\n";
-	}
-
-	for(k=0; k<4; k++){
-		savetext += "volume"
-		savetext += k.toString(10);
-		savetext += ":";
-		savetext += dvol[k].toString(10);
-		savetext +="\r\n";
-	}
-
-	for(k=0; k<4; k++){
-		savetext += "track_"
-		savetext += k.toString(10);
-		savetext += ":";
-		for(i=0; i<16; i++){
-			savetext += toggle[i+k*16].toString(10);
-			savetext += " "
-		}
-		savetext +="\r\n";
-	}
-
-	savetext += "__end__";
-	savetext +="\r\n";
-
-	var fn=document.getElementById("file_name");
-	var fname=fn.value;
-	var aaa=new Blob([savetext]);
-	download(aaa, fname);
-
-}	
-
-
+﻿
 //-- 	------------------------------------------------------------------	-->
 // 選択したテキストファイルの内容を表示
-window.addEventListener("load", function(){
+window.addEventListener("DOMContentLoaded", function(){
 	// File APIが使えるか調べる
 	if (!window.File){
 		ele.innerHTML = "File APIが使用できません";
