@@ -62,37 +62,22 @@ function editvalue(e){
 /* パラメータファイルの保存 */
 function savedata()
 {
-
-	var i,k;
+	var i, k;
 	var savetext='';
 
-	savetext += "tempo__:"
-	savetext += tempo.toString(10);
+	savetext += "__start__";
 	savetext +="\r\n";
 
-	for(k=0; k<4; k++){
-		savetext += "tone__"
-		savetext += k.toString(10);
-		savetext += ":";
-		savetext += (tone[k].toString(10)-35);
-		savetext +="\r\n";
+	for(i=0; i<0x30; i++){
+		savetext += mVCOM[i].toString(10);
+		savetext += " ";
 	}
+	savetext +="\r\n";
 
-	for(k=0; k<4; k++){
-		savetext += "volume"
-		savetext += k.toString(10);
-		savetext += ":";
-		savetext += dvol[k].toString(10);
-		savetext +="\r\n";
-	}
-
-	for(k=0; k<4; k++){
-		savetext += "track_"
-		savetext += k.toString(10);
-		savetext += ":";
-		for(i=0; i<16; i++){
-			savetext += toggle[i+k*16].toString(10);
-			savetext += " "
+	for(k=0; k<4; i++){
+		for(i=0; i<0x20; i++){
+			savetext += mOP[k][i].toString(10);
+			savetext += " ";
 		}
 		savetext +="\r\n";
 	}
@@ -102,11 +87,9 @@ function savedata()
 
 	var fn=document.getElementById("file_name");
 	var fname=fn.value;
-	var aaa=new Blob([savetext]);
-	download(aaa, fname);
-
-}	
-
+	var psave = new Blob([savetext]);
+	download(psave, fname);
+}
 
 /* パラメータファイルの読み込み*/
 function loaddata()
@@ -140,3 +123,103 @@ function loaddata()
 
 }
 
+function readresult(text){
+	var i=0, kk=0, flag=0;
+	var chank=null;
+	var imenu=null;
+	var data;
+
+	log.textContent += text;
+
+	seq_stop();
+
+	while(1){
+		chank = text.substr(i,7);
+		data=parseInt(text.substr(i+8,3));
+		log.textContent += data;
+		log.textContent += "\n";
+
+		kk=0;
+		flag=0;
+
+		if(!chank.localeCompare("tempo__")) {
+			imenu = document.getElementById("tempo");
+			imenu.value = data;
+			tempo = data;
+			beatx = Math.floor(60000/tempo/8);
+		}
+
+		else if(!chank.localeCompare("tone__0")) {
+			imenu = document.getElementById("tone0");
+			flag=1;
+			kk=0;
+		}
+		else if(!chank.localeCompare("tone__1")){
+			imenu = document.getElementById("tone1");
+			flag=1;
+			kk=1;
+		}
+		else if(!chank.localeCompare("tone__2")){
+			imenu = document.getElementById("tone2");
+			flag=1;
+			kk=2;
+		}
+		else if(!chank.localeCompare("tone__3")){
+			imenu = document.getElementById("tone3");
+			flag=1;
+			kk=3;
+		}
+
+		else if(!chank.localeCompare("volume0")){
+			imenu = document.getElementById("volume0");
+			flag=2;
+			kk=0;
+		}
+		else if(!chank.localeCompare("volume1")){
+			imenu = document.getElementById("volume1");
+			flag=2;
+			kk=1;
+		}
+		else if(!chank.localeCompare("volume2")){
+			imenu = document.getElementById("volume2");
+			flag=2;
+			kk=2;
+		}
+		else if(!chank.localeCompare("volume3")){
+			imenu = document.getElementById("volume3");
+			flag=2;
+			kk=3;
+		}
+
+		else if(!chank.localeCompare("track_0")){ flag=3; kk=0; }
+		else if(!chank.localeCompare("track_1")){ flag=3; kk=1; }
+		else if(!chank.localeCompare("track_2")){ flag=3; kk=2; }
+		else if(!chank.localeCompare("track_3")){ flag=3; kk=3; }
+
+		if(flag==1){
+			if(data>=45) data=45;
+			imenu.value = data;
+			tone[kk]=data+35;
+		}
+		else if(flag==2){
+			if(data>=127) data=127;
+			imenu.value = data;
+			dvol[kk]=data;
+		}
+		else if(flag==3){
+			for(var j=0; j<16; j++){
+				data=parseInt(text.substr(i+8+j*2,1));
+				toggle[j+kk*16]=data;
+			}
+			drawmatrix();
+		}
+
+		if(!chank.localeCompare("__end__")) break;
+
+		i+=7; if(i>=1000) break;
+		while(text[i]!="\n") i++;
+		i++;
+
+	}
+
+}
