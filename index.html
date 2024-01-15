@@ -52,6 +52,20 @@
       text-align: left;
       background-color: #ffffff;
     }
+
+    table{
+      border: 0px;
+    }
+
+    table, td{
+      min-width : 10px
+    }
+
+    #vname{
+      font-size: 1em;
+      width: 200px;
+    }
+
   </style>
 
   <!-- <body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#ff00ff" alink="#ff0000"
@@ -63,31 +77,34 @@
 
 <body>
 
+  <h2>Reface DX Editor</h2>
+
   <!--	------------------------------------------------------------------ -->
-  <table border="0">
+
+  <table>
     <tr>
       <td>NAME:</td>
-      <td><input type="text" id="vname" name="vname" size="6" value="voice name" maxlength="10" width="100"></td>
-      <td width="2"></td>
+      <td><input type="text" id="vname" name="vname" value="voice name"></td>
+      <td> </td>
 
       <td> <input type="button" value="sync" id="sync" click="goload()"></td>
-      <td width="2"></td>
+      <td> </td>
 
       <!--	------------------------------------------------------------------ -->
       <td>
         <form name="input_device_select">
-          midi in:
+          MIDI in:
       </td>
       <td><select name="ids" onChange="inputDeviceSelect2(this);">
           <option value="0">No Device
         </select>
         </form>
       </td>
-      <td width="2"></td>
+      <td> </td>
 
       <td>
         <form name="output_device_select">
-          out:
+          MIDI out:
       </td>
       <td><select name="ids" onChange="outputDeviceSelect(this);">
           <option value="0">No Device
