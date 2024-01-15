@@ -4,7 +4,7 @@ var mVCOM = null;
 var mOP = null;
 var mCnt = 0;
 
-window.onload() = function(){
+window.onload = function(){
 	$("#sync").click( function () {
 		goload();
 	});
