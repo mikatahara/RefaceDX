@@ -8,6 +8,28 @@ window.onload = function(){
 	$("#sync").click( function () {
 		goload();
 	});
+
+	$("#trans").change( function () {
+		var e={valueAsNumber:0, name:""};
+		e.valueAsNumber = parseInt($(this).val());
+		e.name = $(this).attr('name');
+		sendFormFunction(e);
+	});
+
+	$("#pitchbend").change( function () {
+		var e={valueAsNumber:0, name:""};
+		e.valueAsNumber = parseInt($(this).val());
+		e.name = $(this).attr('name');
+		sendFormFunction(e);
+	});
+
+	$("#portament").change( function () {
+		var e={valueAsNumber:0, name:""};
+		e.valueAsNumber = parseInt($(this).val());
+		e.name = $(this).attr('name');
+		sendFormFunction(e);
+	});
+	
 }
 
 window.addEventListener("load", function () {
@@ -45,7 +67,6 @@ window.addEventListener("load", function () {
 				}
 				mCnt++; mCnt %= 5;
 			}, 100);
-
 		}
 	}, 200);
 

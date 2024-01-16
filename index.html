@@ -175,7 +175,8 @@
     <tr>
       <form id="function">
         <td>
-          <input type="number" name="trans" step="1" min="-24" max="24" value="-24" onChange="editvalue(this);">
+<!--          onChange="editvalue(this);"-->
+          <input type="number" name="trans" id="trans" step="1" min="-24" max="24" value="0">
         </td>
         <td>
           <select name="partmode" onChange="editvalue(this);">
@@ -185,10 +186,10 @@
           </select>
         </td>
         <td>
-          <input type="number" name="portament" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
+          <input type="number" name="portament" id="portament" step="1" min="0" max="127" value="0">
         </td>
         <td>
-          <input type="number" name="pitchbend" step="1" min="0" max="127" value="0" onChange="editvalue(this);">
+          <input type="number" name="pitchbend" id="pitchbend" step="1" min="0" max="127" value="0">
         </td>
       </form>
 
