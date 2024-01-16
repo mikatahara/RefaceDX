@@ -53,19 +53,19 @@
       background-color: #ffffff;
     }
 
-    table{
+    table {
       border: 0px;
     }
 
-    table, td{
-      min-width : 10px
+    table,
+    td {
+      min-width: 10px
     }
 
-    #vname{
+    #vname {
       font-size: 1em;
       width: 200px;
     }
-
   </style>
 
   <!-- <body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#ff00ff" alink="#ff0000"
@@ -92,23 +92,25 @@
 
       <!--	------------------------------------------------------------------ -->
       <td>
-        <form name="input_device_select">
-          MIDI in:
+        MIDI in:
       </td>
-      <td><select name="ids" onChange="inputDeviceSelect2(this);">
-          <option value="0">No Device
-        </select>
+      <td>
+        <form name="input_device_select">
+          <select name="ids" onChange="inputDeviceSelect2(this);">
+            <option value="0">No Device
+          </select>
         </form>
       </td>
       <td> </td>
 
       <td>
-        <form name="output_device_select">
-          MIDI out:
+        MIDI out:
       </td>
-      <td><select name="ids" onChange="outputDeviceSelect(this);">
-          <option value="0">No Device
-        </select>
+      <td>
+        <form name="output_device_select">
+          <select name="ids" onChange="outputDeviceSelect(this);">
+            <option value="0">No Device
+          </select>
         </form>
       </td>
     </tr>
@@ -117,28 +119,33 @@
   </table>
 
   <!--	------------------------------------------------------------------ -->
-  <table border="0">
-    <tr>
+  <table>
     <tr>
       <td>
         FILE:
+      </td>
+      <td>
         <form name="saveload">
+          <input type="text" name="filename" id="file_name" size="16" value=param.txt width="100">
+        </form>
       </td>
       <td>
-        <input type="text" name="filename" id="file_name" size="16" value=param.txt width="100"></input>
+        <form name="saveload">
+          <input type="button" value="save" onClick="savedata();">
+        </form>
       </td>
       <td>
-        <input type="button" value="save" onClick="savedata();">
+        <form name="saveload">
+          <input type="file" id="filedata" accept="text/*">
+        </form>
       </td>
       <td>
-        <input type="file" id="filedata" accept="text/*">
+        <form name="saveload">
+          <input type="button" id="file_read" value="load" onClick="loaddata();">
+        </form>
       </td>
-      <td>
-        <input type="button" id="file_read" value="load" onClick="loaddata();">
-      </td>
-      </form>
-
     </tr>
+
     <!--	------------------------------------------------------------------ -->
   </table>
   <!--	------------------------------------------------------------------ -->
@@ -175,7 +182,7 @@
     <tr>
       <form id="function">
         <td>
-<!--          onChange="editvalue(this);"-->
+          <!--          onChange="editvalue(this);"-->
           <input type="number" name="trans" id="trans" step="1" min="-24" max="24" value="0">
         </td>
         <td>
