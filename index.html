@@ -124,26 +124,20 @@
       <td>
         FILE:
       </td>
-      <td>
-        <form name="saveload">
+      <form name="saveload">
+        <td>
           <input type="text" name="filename" id="file_name" size="16" value=param.txt width="100">
-        </form>
-      </td>
-      <td>
-        <form name="saveload">
+        </td>
+        <td>
           <input type="button" value="save" onClick="savedata();">
-        </form>
-      </td>
-      <td>
-        <form name="saveload">
+        </td>
+        <td>
           <input type="file" id="filedata" accept="text/*">
-        </form>
-      </td>
-      <td>
-        <form name="saveload">
+        </td>
+        <td>
           <input type="button" id="file_read" value="load" onClick="loaddata();">
-        </form>
-      </td>
+        </td>
+      </form>
     </tr>
 
     <!--	------------------------------------------------------------------ -->
@@ -182,7 +176,6 @@
     <tr>
       <form id="function">
         <td>
-          <!--          onChange="editvalue(this);"-->
           <input type="number" name="trans" id="trans" step="1" min="-24" max="24" value="0">
         </td>
         <td>
