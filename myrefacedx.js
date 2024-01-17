@@ -29,7 +29,20 @@ window.onload = function(){
 		e.name = $(this).attr('name');
 		sendFormFunction(e);
 	});
-	
+
+	$("#effect1.param1").change( function () {
+		var e={valueAsNumber:0, name:""};
+		e.valueAsNumber = parseInt($(this).val());
+		e.name = $(this).attr('name');
+		sendFormEffec1(e);
+	});
+
+	$("#effect1.param2").change( function () {
+		var e={valueAsNumber:0, name:""};
+		e.valueAsNumber = parseInt($(this).val());
+		e.name = $(this).attr('name');
+		sendFormEffec1(e);
+	});
 }
 
 window.addEventListener("load", function () {
